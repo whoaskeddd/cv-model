@@ -4,16 +4,16 @@
 
 ## Подготовка
 
-Запускайте команды из корня проекта. Нужен Python 3.10+; для обучения желательно использовать CUDA-совместимую видеокарту.
+Запускайте команды из корня проекта. Нужен Python 3.12+; для обучения желательно использовать CUDA-совместимую видеокарту.
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-pip install ultralytics opencv-python numpy matplotlib pandas
+pip install -r requirements.txt
 ```
 
-Данные классификации должны находиться в `dataset/{train,val,test}/{cracked,uncracked}`, исходные изображения и маски сегментации — в `segmentation/{train,val,test}/{images,masks}`. При переносе проекта измените поле `path` в `yolo_seg/data.yaml` на абсолютный путь к папке `yolo_seg`.
+Данные классификации должны находиться в `dataset/{train,val,test}/{cracked,uncracked}`, исходные изображения и маски сегментации — в `segmentation/{train,val,test}/{images,masks}`. Пути к данным сегментации определяются относительно `yolo_seg/data.yaml`, поэтому после клонирования проекта менять их не требуется.
 
 ## Воспроизведение
 
@@ -25,7 +25,7 @@ python scripts/prepare_yolo_seg.py
 python train_yolo_seg.py
 ```
 
-Скрипты используют GPU (`device=0`). Для запуска на CPU замените это значение в `train.py` и `train_yolo_seg.py` на `device="cpu"` (обучение будет значительно дольше).
+Ultralytics автоматически использует доступный GPU, а при его отсутствии переключается на CPU. Обучение на CPU будет значительно дольше.
 
 Оценка и сохранение примеров сегментации:
 
@@ -43,4 +43,4 @@ python visualize_segmentation.py
 python pipeline.py
 ```
 
-В консоли появятся класс и уверенность модели; для изображения с трещиной откроются окна с оригиналом, бинарной маской и наложением маски. Готовые веса уже лежат в `runs/classify/train-3/weights/best.pt` и `runs/segment/runs/segmentation/yolov8n_seg-2/weights/best.pt`.
+В консоли появятся класс и уверенность модели; для изображения с трещиной откроются окна с оригиналом, бинарной маской и наложением маски. Готовые веса уже лежат в `runs/classify/train-3/weights/best.pt` и `runs/segmentation/yolov8n_seg-2/weights/best.pt`.

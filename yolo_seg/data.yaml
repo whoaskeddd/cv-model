@@ -1,5 +1,3 @@
-path: C:/Users/artem/Documents/cv-model/yolo_seg
-
 train: images/train
 val: images/val
 test: images/test

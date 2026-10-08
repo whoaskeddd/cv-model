@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 CLASSIFIER_PATH = "runs/classify/train-3/weights/best.pt"
-SEGMENTATION_PATH = "runs/segment/runs/segmentation/yolov8n_seg-2/weights/best.pt"
+SEGMENTATION_PATH = "runs/segmentation/yolov8n_seg-2/weights/best.pt"
 
 
 # порог уверенности

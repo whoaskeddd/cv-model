@@ -111,4 +111,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: tracktrack.yaml
-save_dir: C:\Users\artem\Documents\cv-model\runs\classify\train-3
+save_dir: runs/classify/train-3

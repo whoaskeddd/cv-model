@@ -6,7 +6,6 @@ results = model.val(
     data="dataset",
     split="test",
     imgsz=320,
-    device=0,
     plots=True,
     workers = 0
 )
@@ -49,7 +48,6 @@ print("F1:", round(f1, 4))
 #     data="dataset",
 #     split="test",
 #     imgsz=320,
-#     device=0,
 #     workers = 0
 # )
 

@@ -6,6 +6,7 @@ env/
 # Python cache and tooling artifacts
 __pycache__/
 *.py[cod]
+*.cache
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/

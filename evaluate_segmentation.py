@@ -5,7 +5,7 @@ from ultralytics import YOLO
 
 
 MODEL_PATH = (
-    "runs/segment/runs/segmentation/"
+    "runs/segmentation/"
     "yolov8n_seg-2/weights/best.pt"
 )
 

@@ -5,7 +5,7 @@ data: yolo_seg/data.yaml
 epochs: 100
 time: null
 patience: 100
-batch: 16
+batch: 32
 imgsz: 448
 save: true
 save_period: -1
@@ -13,7 +13,7 @@ cache: false
 device: '0'
 workers: 0
 project: runs/segmentation
-name: yolov8n_seg
+name: yolov8n_seg-2
 exist_ok: false
 pretrained: true
 cls_remap: true
@@ -111,4 +111,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: tracktrack.yaml
-save_dir: C:\Users\artem\Documents\cv-model\runs\segment\runs\segmentation\yolov8n_seg
+save_dir: runs/segmentation/yolov8n_seg-2
